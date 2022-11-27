@@ -1,0 +1,8 @@
+.env
+
+dist
+node_modules
+
+*.js
+*.pem
+*.r
