@@ -6,3 +6,7 @@ node_modules
 *.js
 *.pem
 *.r
+
+# migrate-diqus
+errors.log
+process.json
