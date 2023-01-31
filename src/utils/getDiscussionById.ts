@@ -47,7 +47,10 @@ export const getDiscussionById = async (token: string, discussionId: string) => 
     }),
   }).then((r) => r.json());
 
-  // console.log(JSON.stringify(rawData, null, 2));
+  if (process.env.DEBUG === "TRUE") {
+    console.log("DEBUG response for getDiscussionById:")
+    console.log(JSON.stringify(rawData, null, 2));
+  }
 
   if (rawData && rawData.data && rawData.data.node) {
     return rawData.data.node;

@@ -22,7 +22,10 @@ export const getRepositoryId = async (token: string) => {
     }),
   }).then((r) => r.json());
 
-  // console.log(JSON.stringify(response, null, 2));
+  if (process.env.DEBUG === "TRUE") {
+    console.log("DBUG response for getRepositoryId:")
+    console.log(JSON.stringify(response, null, 2));
+  }
 
   if (response.data.repository.id) {
     return response.data.repository.id;
