@@ -28,6 +28,7 @@ Follow the next steps to install and configure the script:
 | `CATEGORY_NAME` | The name of the discussion category to which the new discussions get created |
 | `API_RETRIES` | The number of retries to make in case of an error |
 | `SLEEP_TIME` | The time to sleep between creating comments/replies |
+| `DEBUG` | Set to `TRUE` to show Github API (error) responses |
 
 ### GitHub App
 
@@ -43,6 +44,7 @@ The other way to authenticate is by using a personal access token, it is the eas
 
 You will need to create a classic token (as the GraphQL API doesn't support the fine-grained tokens yet) with the following permissions:
 
+- `public_repo:read`
 - `write:discussion`
 
 ## GitHub discussion configuration

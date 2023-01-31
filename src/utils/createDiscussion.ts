@@ -18,7 +18,6 @@ export interface CreateDiscussionResponse extends GraphQLResponse {
 
 
 export const createDiscussion = async (token: string, repoId: string, categoryId: string, slug: string, articleTitle: string, articleUrl: string, retry: number = 0): Promise<string | undefined> => {
-  
   const response: CreateDiscussionResponse = await fetch(GRAPHQL_API, {
     method: 'POST',
     headers: {
@@ -52,7 +51,10 @@ export const createDiscussion = async (token: string, repoId: string, categoryId
     }),
   }).then((r) => r.json());
 
-  // console.log(JSON.stringify(response, null, 2));
+  if (process.env.DEBUG === "TRUE") {
+    console.log("DEBUG response for createDiscussionResponse:")
+    console.log(JSON.stringify(response, null, 2));
+  }
 
   if (response?.data?.createDiscussion?.discussion?.id) {
     return response.data.createDiscussion.discussion.id;
