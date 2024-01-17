@@ -23,7 +23,6 @@ Follow the next steps to install and configure the script:
 | `OWNER` | The owner ID of the repository |
 | `REPOSITORY` | The repository name |
 | `XML_FILE` | The filename of the Disqus XML export file (this should be placed in the root) |
-| `DISQUS_USERNAME` | The username to exclude from the comment headers (in case you don't want to show your own name) |
 | `SITE_URL` | The site URL to process, this will be used to ignore different starting paths like Google translate, cache, ... |
 | `CATEGORY_NAME` | The name of the discussion category to which the new discussions get created |
 | `API_RETRIES` | The number of retries to make in case of an error |

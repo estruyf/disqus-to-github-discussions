@@ -16,6 +16,9 @@ if (!process.env.XML_FILE) {
   throw new Error("XML_FILE environment variable is not set");
 }
 
+// Ensure that dates in the imported comments are displayed in UTC
+process.env.TZ = "UTC"
+
 const xmlData = readFileSync(join(__dirname, "../", process.env.XML_FILE), "utf8");
 
 (async () => {
