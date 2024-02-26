@@ -63,7 +63,7 @@ export const addDiscussionComment = async (token: string, discussionId: string, 
 <img src="https://disqus.com/api/users/avatars/${comment.author.username}.jpg" width="48" height="48" align="left" hspace="10">
 <strong>Posted by <a href="https://disqus.com/by/${comment.author.username}">${comment.author.name}</a></strong>
 <br/>
-<em>${format(date, "EEEE MMM dd, Y 'at' HH:mm 'GMT'")}</em>
+<em>${format(new Date(comment.createdAt), "EEEE MMM dd, Y 'at' HH:mm 'GMT'")}</em>
 </p>
 <hr/>
 
