@@ -11,7 +11,7 @@ Follow the next steps to install and configure the script:
 
 ## Script configuration
 
-- Copy the `.env.example` file to `.env` and fill the variables
+- Copy the `.env.sample` file to `.env` and fill the variables
 
 | Variable | Description |
 | --- | --- |
@@ -58,7 +58,7 @@ Once you configured the project, you can run the script with `npm start`.
 
 ### Progress
 
-The progress is saved in the `progress.json` file, so you can stop the script and continue later. The file will contain all the thread, comment, and reply ID mappings.
+The progress is saved in the `process.json` file, so you can stop the script and continue later. The file will contain all the thread, comment, and reply ID mappings.
 
 > **Info**: When the script would fail, you can run it again, and it will skip the already processed comments.
 
