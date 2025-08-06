@@ -70,7 +70,7 @@ const xmlData = readFileSync(join(__dirname, "../", process.env.XML_FILE), "utf8
 
     // Retrieve the github discussion categories
     const categories: Category[] | undefined = await getCategories(accessToken);
-    
+
     const category = categories?.find((c) => c.name === process.env.CATEGORY_NAME);
     if (!category) {
       throw new Error(`Category ${process.env.CATEGORY_NAME} not found`);
@@ -78,6 +78,11 @@ const xmlData = readFileSync(join(__dirname, "../", process.env.XML_FILE), "utf8
 
     // Start creating the discussions
     for (const thread of threads) {
+
+      if (process.env.WITH_COMMENTS_ONLY && thread.comments.length === 0) {
+        console.log(`No comments. Ignoring thread: ${thread.link}`);
+        continue;
+      }
 
       // URLs to ignore
       if (process.env.SITE_URL && !thread.link.startsWith(process.env.SITE_URL)) {
